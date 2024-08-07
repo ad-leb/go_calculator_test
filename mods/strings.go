@@ -1,4 +1,4 @@
-package main
+package mods
 
 
 const Str_Atoi					string = "Atoi: "

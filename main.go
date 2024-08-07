@@ -2,12 +2,13 @@ package main
 import (
 	"os"
 	"io"
+	"calculator/mods"
 )
 
 
 
 func main () {
-	var e *Expr = new(Expr)
+	var e *mods.Expr = new(mods.Expr)
 	var err error
 
 
@@ -15,6 +16,6 @@ func main () {
 	for {
 		if _, err = io.Copy(e, os.Stdin); err != nil && err != io.EOF		{ panic(err) }
 		if _, err = io.Copy(os.Stdout, e); err != nil && err != io.EOF		{ panic(err) }
-		if _, err = os.Stdout.Write(Str_newline); err != nil 				{ panic(err) }
+		if _, err = os.Stdout.Write(mods.Str_newline); err != nil 			{ panic(err) }
 	}
 }
